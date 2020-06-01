@@ -9,9 +9,9 @@ unsigned long convert(string bin){
 
 int main(){
   cout << "enter a binary" << endl;
-  int bin;
+  string bin;
   
-  cin >> n;
+  cin >> bin;
   
   cout << convert(bin) << endl;
 }
