@@ -4,7 +4,7 @@
 	Определить каких элементов больше четных или нечетных по значению.
 2.Словесное описание алгоритма:
 	1)Объявляются переменые 
-		mass - вектор для хранения данных
+		mass - массив для хранения данных
 		even - счетчик четных
 		odd - нечетных
 	2)Заполняется массив с клавиатуры
@@ -23,7 +23,7 @@ using namespace std;
 
 int main(){
 	//объявить переменные
-	vector<int> mass(N);
+	int *mass = new int[N];
 	int even, odd;
 
 	cout << "please, enter the array" << endl;
@@ -52,6 +52,7 @@ int main(){
 	else if (even == odd)
 		cout << "equals" << endl;
 
+	delete mass;
 	return 0;
 }
 
