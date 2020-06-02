@@ -25,7 +25,7 @@ using namespace std;
 
 int main(){
 	//объявить переменные
-	vector<int> arr_people(N);
+	int *arr_people = new int[N];
 	int even = 0;
 	int odd = 0;
 
@@ -46,6 +46,9 @@ int main(){
 		else
 			odd += arr_people[i];
 	}
+
+
+	delete arr_people;
 
 	if (even > odd)
 		cout << "even" << endl;
