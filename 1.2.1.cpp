@@ -23,9 +23,9 @@ using namespace std;
 
 int main(){
 	//объявить переменные
-	vector<int> arr_1(N);
-	vector<int> arr_2(N);
-	vector<int> arr_3(N);
+	int *arr_1 = new int[N];
+	int *arr_2 = new int[N];
+	int *arr_3 = new int[N];
 
 	cout << "please, enter the 1 array" << endl;
 
@@ -53,8 +53,13 @@ int main(){
 
 	//вывод третьего массива с клавиатуры
 
+	delete arr_1;
+	delete arr_2;
+
 	for (int i = 0; i < N; i ++)
 		cout << arr_3[i] << " ";
+
+	delete arr_3;
 
 	return 0;
 }
