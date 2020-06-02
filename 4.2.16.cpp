@@ -6,7 +6,7 @@
 	2)Объявляются функция для сортировки символов
 		2.1)Объявляются переменные
 			len - длина строки
-			str_arr - вектор для хранения кодов символов
+			str_arr - массив для хранения кодов символов
 		2.2)С помощью цикла записываюся номера символов в вектор
 		2.3)Перезаписывается символы строки с помощью функции сортировки
 	3)Объявляется переменная для хранения строки
@@ -16,51 +16,47 @@
 
 
 #include <iostream>
-#include <bitset>
-#include <vector>
+
 
 using namespace std;
 
 //Объявляется функция для сортировки пузырьком
 
-vector<int> sort(vector<int> arr){
-	int temp; // временная переменная для обмена элементов местами
-	int size = arr.size();
-    // Сортировка массива пузырьком
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                // меняем элементы местами
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-
-    return arr;
-
+void sort(int *num, int size){
+  // Для всех элементов
+	for (int i = 0; i < size - 1; i++){
+    	for (int j = (size - 1); j > i; j--){ // для всех элементов после i-ого
+      		if (num[j - 1] > num[j]){ // если текущий элемент меньше предыдущего
+ 
+		        int temp = num[j - 1]; // меняем их местами
+		        num[j - 1] = num[j];
+		        num[j] = temp;
+      		}
+    	}
+  	}
 }
+
 
 //Объявляются функция для сортировки символов
 
 string sort_symbols(string str){
 	//Объявляются переменные
 	int len = str.length();
-	vector<int> str_arr(len);
+	int *str_arr = new int[len];
 
-	//С помощью цикла записываюся номера символов в вектор
+	//С помощью цикла записываюся номера символов в массив
 	for (int i = 0; i < len; i ++){
 		str_arr[i] = int(str[i]);
-		/*cout << str_arr[i] << endl;*/
 	}
 
+	//сортировка
+	sort(str_arr, len);
 
-	//Перезаписывается символы строки с помощью функции сортировки
+	//Перезаписывается символы строки
 	for (int i = 0; i < len; i ++)
-		str[i] = char(sort(str_arr)[i]);
+		str[i] = char(str_arr[i]);
 
-
+	delete str_arr;
 
 	return str;
 }
