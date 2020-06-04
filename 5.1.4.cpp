@@ -72,4 +72,24 @@ int main (){
 	enter an address to write
 	c://users/nazar/desktop/new.txt
 	ok
+	
+	содержимое c://new.txt
+		1ddfsdfsdf
+		2fsdf
+		3sdfsd
+		4fsdf
+		5sd
+		6fs
+		7df
+		8sd
+		9fs
+	содержимое c://users/nazar/desktop/new.txt
+		1ddfsdfsdf
+		2fsdf
+		4fsdf
+		5sd
+		6fs
+		7df
+		8sd
+		9fs
 */
