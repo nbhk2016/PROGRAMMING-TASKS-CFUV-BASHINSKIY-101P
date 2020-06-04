@@ -1,7 +1,6 @@
 /*
 1.Условие задачи:
-	В заданной строке поменять местами первое и последнее слово строки.
-	Разделителями слов считаются пробелы.
+	Имеется текстовый файл. Удалить из него третью строку. Результат записать в другой файл.
 2.Словесное описание алгоритма:
 	1)Объявляется функция для чтения файла
 		1.1)Объявляются переменные
@@ -23,14 +22,16 @@ using namespace std;
 string read_file(string address){
     string line;
     string str;
+
+    int i = 0;
  
     ifstream in(address);
     if (in.is_open())
         while (getline(in, line)){
         	if (i != 2){
 	            str += line + "\n";
-	            i++;
         	}
+        	i++;
         }
         
     in.close();
@@ -46,16 +47,28 @@ void write_file(string address, string content){
 }
 
 int main (){
-	cout << "enter a addr" << endl;
-	//Объявляется переменная для хранения строки
-	string addr;
+	cout << "enter an address to read" << endl;
+	//Объявляется переменная для хранения строки адреса чтения
+	string addr_read;
 	//Ввод строки с клавиатуры
-	cin >> addr;
-	//Вывод результата работы функции замены
-	write_file(addr, read_file(addr));
+	cin >> addr_read;
+
+	cout << "enter an address to write" << endl;
+	//Объявляется переменная для хранения строки адреса чтения
+	string addr_write;
+	//Ввод строки с клавиатуры
+	cin >> addr_write;
+	//Вызов функции чтения и записи
+	write_file(addr_write, read_file(addr_read));
+
+	cout << "ok" << endl;
 
 }
 
 /*Результат выполнения:
-	удалилась 3 строка файла
+	enter an address to read
+	c://new.txt
+	enter an address to write
+	c://users/nazar/desktop/new.txt
+	ok
 */
