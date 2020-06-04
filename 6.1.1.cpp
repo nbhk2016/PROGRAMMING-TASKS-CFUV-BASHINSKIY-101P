@@ -138,3 +138,19 @@ int main(){
 
 	return  0;
 }
+
+/*текстовый вывод
+Enter filename: test
+Enter k: 6
+
+Data from keyboard to file "test" (Q - quit).
+1 2 3 4 5 6 7 8 9
+Q
+
+Data of file "test"
+1 2 3 4 5 6 7 8 1 1 1 1 2 3 4 5 6 7 1 2 3 4 5 6 7 8 9
+i = 0 data = 1
+i = 2 data = 3
+i = 5 data = 6
+last 9
+*/
