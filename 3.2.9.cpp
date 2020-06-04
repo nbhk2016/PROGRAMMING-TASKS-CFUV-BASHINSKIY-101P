@@ -44,7 +44,7 @@ int main(){
   cout << convert(bin) << endl;
 }
 
-/*
+/*+
 4.Результат работы на текстовых данных
 	enter a binary
 	101
