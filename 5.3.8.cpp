@@ -95,7 +95,7 @@ int main(){
 	return 0;
 }
 
-/*текстовый вывод
+/*текстовый вывод+
 Enter first file address
 c://users/nazar/desktop/1.txt
 Enter second file address
