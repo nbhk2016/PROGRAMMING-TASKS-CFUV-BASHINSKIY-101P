@@ -74,7 +74,7 @@ int main (){
 
 }
 
-/*Результат текстового выполнения:
+/*Результат текстового выполнения:+
 	enter a string
 	fkgposkpoesrfdfg
 	defffggkkoopprss
