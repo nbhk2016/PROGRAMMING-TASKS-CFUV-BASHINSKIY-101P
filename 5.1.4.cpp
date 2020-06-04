@@ -62,6 +62,7 @@ int main (){
 	write_file(addr_write, read_file(addr_read));
 
 	cout << "ok" << endl;
+	return 0;
 
 }
 
